@@ -1,24 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-
-
-const Header = () => {
-    return (<div className="header-container">
-        <div className="logo-container">
-            <img className="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv86s5jLvuvNk7tN5cWRz-cq90TxdOeIpnEw&s"/>
-        </div>
-        <div className="nav-links-container">
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Cart</li>
-            </ul>
-        </div>
-    </div>);
-}
-
 const restaurants = [
     {
         id: 1,
@@ -92,44 +71,4 @@ const restaurants = [
     }
 ];
 
-
-
-const ResCard = (props) => {
-    const {restaurant} = props;
-    const {name, cuisine, rating, deliveryTime} = restaurant;
-    return (<div className="res-card">
-        <img src=""/>
-        <h3>{name}</h3>
-        <h4>{cuisine}</h4>
-        <h4>{deliveryTime}</h4>
-        <h4 >{rating}</h4>
-    </div>);
-}
-
-const Body = () => {
-    return(<div className="body-container">
-        <div className="search-container">
-            Search
-        </div>
-        <div className="restaurants-container">
-            {restaurants.map(restaurant => (
-                <ResCard key={restaurant.id} restaurant={restaurant}/>
-            ))}
-        </div>
-    </div>)
-}
-
-
-
-const AppLayout = () => {
-    return (<div className="app-container">
-        <Header/>
-        <Body/>
-    </div>)
-}
-
-
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout/>)
+export default restaurants;
