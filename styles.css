@@ -34,3 +34,16 @@
     width: 100%;
     height: 200px;
 }
+
+.shimmer-card{
+    height: 400px;
+    width: 300px;
+    margin: 5px;
+    border: 1px solid black;
+    background-color: lightgrey;
+}
+
+.shimmer-ctn {
+    display: flex;
+    flex-wrap: wrap;
+}
