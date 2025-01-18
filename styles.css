@@ -17,6 +17,13 @@
     padding: 5px;
 }
 
+.nav-links-container > ul > button{
+    list-style-type: none;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
 
 .restaurants-container {
     display: flex;
