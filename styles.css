@@ -58,3 +58,15 @@
 .filter-button {
     display: flex;
 }
+
+.user-card {
+    height: 400px;
+    width: 300px;
+    margin: 5px;
+    border: 1px solid black;
+}
+
+.user-card > img {
+    width: 90%;
+    height: 50%;
+}
