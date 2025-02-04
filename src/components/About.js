@@ -6,9 +6,6 @@ class About extends React.Component {
         super(props);
     }
 
-    componentDidMount(){
-    }
-
     render() {
         return (<div className="about">
             <h1>About Page</h1>

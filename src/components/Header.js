@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router";
+import useInternetStatus from "../utils/useInternetStatus";
 
 const Header = () => {
 
-    const [status,setStatus] = useState("Login");
+    const [userStatus,setUserStatus] = useState("Login");
+
+    const internetStatus = useInternetStatus();
 
     return (<div className="header-container">
         <div className="logo-container">
@@ -12,13 +15,14 @@ const Header = () => {
         </div>
         <div className="nav-links-container">
             <ul>
+                <li>Status:{internetStatus ? "Online 🟢" : "Offline 🔴"}</li>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
                 <li>Cart</li>
                 <button onClick={() => {
-                    status === "Login" ? setStatus("Logout") : setStatus("Login")
-                }}>{status}</button>
+                    userStatus === "Login" ? setUserStatus("Logout") : setUserStatus("Login")
+                }}>{userStatus}</button>
             </ul>
         </div>
     </div>);
