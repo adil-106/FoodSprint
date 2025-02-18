@@ -11,4 +11,15 @@ const ResCard = (props) => {
 }
 
 
+// Higher-Order Component - i/p = ResCard and o/p = Enhanced ResCard with Promoted Label
+// export const withPromotedLabel = (ResCard) => {
+//     return (props) => {
+//         return (<div>
+//             <label>Promoted</label>
+//             <ResCard {...props}/>
+//         </div>)
+//     }
+// }
+
+
 export default ResCard;

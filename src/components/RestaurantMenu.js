@@ -26,7 +26,7 @@ const RestaurantMenu = () => {
             <h3>{costForTwoMessage}</h3>
         </div>
         <div className="w-8/12 mx-auto items-center">
-            {categories.map(category => <CategoryItem category={category}/>)}
+            {categories.map(category => <CategoryItem key={category.card.card.title} category={category}/>)}
         </div>
         
     </div>)
