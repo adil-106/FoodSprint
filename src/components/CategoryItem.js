@@ -2,14 +2,14 @@ import { useState } from "react";
 import MenuItems from "./MenuItems";
 
 const CategoryItem = (props) => {
-    const {category} = props;
+    const {category,showItems,setShowIndex} = props;
     const {title, itemCards} = category?.card?.card
     
-
-    const [showItems,setShowItems] = useState(false);
+    // const [showItems,setShowItems] = useState(false);
 
     const handleClick = () => {
-        setShowItems(!showItems);
+        // setShowItems(!showItems);
+        setShowIndex();
     }
 
     return (<div>
