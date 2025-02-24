@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router";
 import useInternetStatus from "../utils/useInternetStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
+
+    const user = useContext(UserContext);
 
     const [userStatus,setUserStatus] = useState("Login");
 
@@ -26,6 +29,8 @@ const Header = () => {
                     userStatus === "Login" ? setUserStatus("Logout") : setUserStatus("Login")
                 }}>{userStatus}</button>
                 </li>
+                <li>{user.loggedInUser}</li>
+
             </ul>
         </div>
     </div>);

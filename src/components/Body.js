@@ -2,12 +2,15 @@ import useListOfRestaurants from "../utils/useListOfRestaurants";
 import ResCard from "./ResCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
-import {useState} from "react";
+import {useContext, useState} from "react";
 import useInternetStatus from "../utils/useInternetStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
 
     const [searchText,setSearchText] = useState("");
+
+    const {loggedInUser, setUserName} = useContext(UserContext);
 
     // custom hook to fetch list of restaurants data from swiggy api
     const {listOfRestaurants,setListOfRestaurants,filteredRestaurants,setFilteredRestaurants} = useListOfRestaurants();
@@ -37,6 +40,11 @@ const Body = () => {
                 let filteredList = listOfRestaurants.filter(res => res.info.avgRating > 4.5);
                 setFilteredRestaurants(filteredList);
             }}>Top Rated Restaurants</button>  
+
+            <div>
+                <label>User Name: </label>
+                <input className= "border border-black m-2 p-0.5 bg-white" type="text" value={loggedInUser} onChange={(e) => setUserName(e.target.value)}/>
+            </div>
 
         </div>
 
